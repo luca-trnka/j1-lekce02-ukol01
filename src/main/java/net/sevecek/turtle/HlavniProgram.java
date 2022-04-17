@@ -10,15 +10,60 @@ public class HlavniProgram<zofka> {
 
         Turtle zofka;
         zofka = new Turtle();
-    zofka.setLocation(300,400);
+    zofka.setLocation(200,100);
 
-    nakresliPrasatko(zofka);
 
-        mezeraMeziPrasatky(zofka);
+        nakresliOsmihran(zofka);
 
-        nakresliMalePrasatko(zofka);
+        zofka.turnRight(90);
+        zofka.penUp();
+        zofka.move(160);
+        zofka.turnLeft(90);
+        zofka.move(10);
+        zofka.penDown();
+
+        zofka.setPenColor(Color.green);
+        nakresliKolo(zofka);
+
+        zofka.turnRight(90);
+        zofka.penUp();
+        zofka.move(180);
+        zofka.turnLeft(90);
+        zofka.penDown();
+
+        nakresliSlunce(zofka);
+
+
     }
 
+    private void nakresliSlunce(Turtle zofka) {
+        zofka.setPenColor(Color.orange);
+        for (int j = 0; j < 12; j++) {
+           zofka.move(30);
+           zofka.turnLeft(30);
+       zofka.turnRight(100);
+       zofka.move(15);
+       zofka.turnRight(180);
+       zofka.move(15);
+       zofka.turnRight(80);
+   }
+    }
+
+    private void nakresliKolo(Turtle zofka) {
+        for (int i = 0; i < 40; i++) {
+            zofka.move(9);
+            zofka.turnLeft(9);
+
+        }
+    }
+
+    private void nakresliOsmihran(Turtle zofka) {
+        zofka.setPenColor(Color.magenta);
+        for (int i = 0; i < 8; i++) {
+            zofka.move(40);
+            zofka.turnLeft(45);
+    }
+    }
 
     private void nakresliPrasatko(Turtle zofka) {
         zofka.turnLeft(180);
