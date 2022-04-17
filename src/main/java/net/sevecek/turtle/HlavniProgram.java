@@ -10,36 +10,53 @@ public class HlavniProgram<zofka> {
 
         Turtle zofka;
         zofka = new Turtle();
-    zofka.setLocation(200,100);
 
+       nakresliSlunce(zofka);
 
-        nakresliOsmihran(zofka);
+        zofka.setLocation(180,200);
 
-        zofka.turnRight(90);
-        zofka.penUp();
-        zofka.move(160);
+        for (int i = 0; i < 5; i++) {
+            nakresliDomecek(zofka);
+            zofka.move(200);
+            zofka.turnLeft(90);
+        }
+
+        zofka.setLocation(180,450);
+        nakresliDomecek(zofka);
+
+        zofka.setLocation(980,450);
         zofka.turnLeft(90);
-        zofka.move(10);
-        zofka.penDown();
+        nakresliDomecek(zofka);
 
-        zofka.setPenColor(Color.green);
-        nakresliKolo(zofka);
-
-        zofka.turnRight(90);
-        zofka.penUp();
-        zofka.move(180);
+        zofka.setLocation(450,450);
         zofka.turnLeft(90);
+        nakresliMalePrasatko(zofka);
+
+    }
+
+    private void nakresliDomecek(Turtle zofka) {
         zofka.penDown();
-
-        nakresliSlunce(zofka);
-
+        for (int i = 0; i < 4; i++) {
+            zofka.setPenColor(Color.black);
+            zofka.turnLeft(90);
+            zofka.move(130);
+        }
+        zofka.setPenColor(Color.red);
+        zofka.turnLeft(45);
+        zofka.move(91.9);
+        zofka.turnLeft(90);
+        zofka.move(91.9);
+        zofka.turnLeft(135);
+        zofka.move(130);
+        zofka.penUp();
 
     }
 
     private void nakresliSlunce(Turtle zofka) {
+        zofka.setLocation(240,90);
         zofka.setPenColor(Color.orange);
         for (int j = 0; j < 12; j++) {
-           zofka.move(30);
+           zofka.move(15);
            zofka.turnLeft(30);
        zofka.turnRight(100);
        zofka.move(15);
@@ -51,6 +68,7 @@ public class HlavniProgram<zofka> {
 
     private void nakresliKolo(Turtle zofka) {
         for (int i = 0; i < 40; i++) {
+            zofka.setPenColor(Color.green);
             zofka.move(9);
             zofka.turnLeft(9);
 
@@ -103,6 +121,7 @@ public class HlavniProgram<zofka> {
         zofka.penDown();
     }
     private void nakresliMalePrasatko(Turtle zofka) {
+        zofka.penDown();
         zofka.setPenColor(Color.pink);
         zofka.turnLeft(180);
         zofka.move(70);
